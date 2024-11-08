@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-public class QuizManager : MonoBehaviour
+public class StageManager : MonoBehaviour
 {
+    public static StageManager instance;
     [System.Serializable]
     public class Question
     {
@@ -23,6 +24,13 @@ public class QuizManager : MonoBehaviour
     private int score;
     private Coroutine feedbackCoroutine;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     private void Start()
     {
         currentQuestionIndex = 0;
