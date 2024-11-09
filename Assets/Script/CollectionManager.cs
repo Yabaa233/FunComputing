@@ -39,31 +39,6 @@ public class CollectionManager : MonoBehaviour
         collectedItemList.Add(itemData);
     }
 
-    //public void RefreshItemUI() 
-    //{
-    //    DetailText.text = string.Empty;
-    //    if (collectedItemList.Count > 0)
-    //    {
-    //        foreach(CollectionItemData item in collectedItemList)
-    //        {
-    //            // 实例化预制体
-    //            GameObject newUIElement = Instantiate(itemPrefab);
-
-    //            // 设置生成物体的父对象为指定的 parentUIObject
-    //            newUIElement.transform.SetParent(itemPrefab.transform, false);
-
-    //            var preItem = itemPrefab.GetComponent<CollectionItem>();
-    //            preItem.itemData.name = item.name;
-    //            preItem.itemData.itemDetail = item.itemDetail;
-    //            preItem.itemData.itemSprite = item.itemSprite;
-
-
-    //            var preImage = itemPrefab.GetComponent<Image>();
-    //            preImage.sprite = item.itemSprite;
-    //        }
-    //    } 
-    //}
-
     public void RefreshItemUI()
     {
         // 清空 UIParent 下的所有子物体
