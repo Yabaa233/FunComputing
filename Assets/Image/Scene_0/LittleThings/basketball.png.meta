@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 197a1bd302a94e544a11bd5e0a619c48
+guid: 99af4ff4c9180d041beb8c79f29a74fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 15, y: 29, z: 18, w: 11}
+  spriteBorder: {x: 57, y: 60, z: 66, w: 59}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: color11_black_crow_0
+      name: basketball_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 7
-        width: 120
-        height: 130
+        x: 60
+        y: 62
+        width: 196
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeacd30e17155514e9b09f777d2bc1b4
-      internalID: 1140625846
+      spriteID: 6e245a218727aef498fae54d932fcbcd
+      internalID: -400745262
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      color11_black_crow_0: 1140625846
+      basketball_0: -400745262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 197a1bd302a94e544a11bd5e0a619c48
+guid: 710ca0cd99949794384e16d3903118da
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 15, y: 29, z: 18, w: 11}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: color11_black_crow_0
+      name: moniter_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 7
-        width: 120
-        height: 130
+        x: 11
+        y: 47
+        width: 299
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeacd30e17155514e9b09f777d2bc1b4
-      internalID: 1140625846
+      spriteID: 55e2843e92cc637479623d92a736dbdf
+      internalID: 897843513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moniter_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 33
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcf1c3a8a42d77409a1a89923f42cf2
+      internalID: 580811139
       vertices: []
       indices: 
       edges: []
@@ -121,14 +142,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      color11_black_crow_0: 1140625846
+      moniter_0: 897843513
+      moniter_1: 580811139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
