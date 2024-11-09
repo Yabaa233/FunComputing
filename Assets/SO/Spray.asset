@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Spray
+  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
+  itemName: "\u30B9\u30D7\u30EC\u30FC"
+  itemSprite: {fileID: 1999420740, guid: 6e0d0f3c10166944aa15a104bfb65bc4, type: 3}
+  itemDetail: "\u30B4\u30DF\u3067\u306F\u306A\u3044\u304C\u5834\u6240\u3092\u6C7A\u3081\u305F\u3044"

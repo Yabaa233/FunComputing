@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Jar
+  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
+  itemName: "\u708A\u98EF\u5668"
+  itemSprite: {fileID: 1008741904, guid: c753f22d3dc76e347b7ece2d4f41360e, type: 3}
+  itemDetail: "\u7559\u5B66\u751F\u304B\u3089\u9234\u6728\u541B\u304C\u3082\u3089\u3063\u305F\u708A\u98EF\u5668"
