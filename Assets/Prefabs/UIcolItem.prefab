@@ -89,10 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d12a53d986aa64fb0200d8b0a607de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemImage: {fileID: 0}
-  itemDetail: 
-  ifNeedDynamicEvent: 1
+  itemData: {fileID: 0}
+  ifInUI: 0
+  ifInScene: 0
 --- !u!114 &9158481456515483858
 MonoBehaviour:
   m_ObjectHideFlags: 0
