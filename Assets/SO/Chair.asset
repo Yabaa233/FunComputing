@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Chair
+  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
+  itemName: "\u6905\u5B50"
+  itemSprite: {fileID: -1432645027, guid: bfaef49df6b58364391801c3e4898cb8, type: 3}
+  itemDetail: "\u6570\u6E1B\u3063\u305F...\uFF1F"
