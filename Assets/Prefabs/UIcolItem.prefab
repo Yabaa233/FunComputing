@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 0}
-  ifInUI: 0
+  ifInUI: 1
   ifInScene: 0
 --- !u!114 &9158481456515483858
 MonoBehaviour:

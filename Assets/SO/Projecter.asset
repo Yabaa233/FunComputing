@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Projecter
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30BF\u30FC"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: projecter
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: 1461270886, guid: 31cea01d777ddcf4a84c103fc5384a8c, type: 3}
-  itemDetail: "\u3044\u3064\u304B\u3053\u308C\u3092\u4F7F\u3063\u3066\u6620\u753B\u3092\u898B\u3088\u3046"
+  itemDetail: projecter

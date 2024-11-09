@@ -41,15 +41,14 @@ public class ClickManager : MonoBehaviour
     // 收集被点击的物体
     public void CollectItem(CollectionItem item)
     {
-        Debug.Log("Item collected: " + item.itemData.itemName);
+        // Debug.Log("Item collected: " + item.itemData.itemName);
+        // 使用 ScriptableObject.CreateInstance 来创建一个新的 CollectionItemData 实例
+        CollectionItemData cloneItemData = ScriptableObject.CreateInstance<CollectionItemData>();
 
-        // 创建一个新的数据项，并复制属性
-        CollectionItemData cloneItemData = new CollectionItemData
-        {
-            itemName = item.itemData.itemName,
-            itemSprite = item.itemData.itemSprite,
-            itemDetail = item.itemData.itemDetail
-        };
+        // 复制属性
+        cloneItemData.itemSprite = item.itemData.itemSprite;
+        cloneItemData.itemDetail = item.itemData.itemDetail;
+
         CollectionManager.instance.AddItem(cloneItemData);
         Destroy(item.gameObject);
     }

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Sikiho
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u56DB\u5B63\u5831"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: sikiho
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: -189770373, guid: f6fd8bd190bebce4384c6c2cbc89622f, type: 3}
-  itemDetail: "M1\u306E\u611B\u8AAD\u66F8\u3002\u5B9A\u4F4D\u7F6E\u6C7A\u3081\u305F\u3044\u306D"
+  itemDetail: sikiho

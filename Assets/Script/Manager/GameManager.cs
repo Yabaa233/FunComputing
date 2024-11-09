@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
         SetState(GameState.Start);  // 初始状态为 Start
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("c"))
+        {
+            ShowCollection();
+        }
+    }
     public void SetState(GameState newState)
     {
         // 退出当前状态的 UI 设置

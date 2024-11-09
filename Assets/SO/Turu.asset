@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Turu
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u3064\u308B"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: turu
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: 1604253541, guid: 1db6c7171b28ae646ab322c54ad97ee8, type: 3}
-  itemDetail: "\u72C2\u3063\u305F\u3088\u3046\u306B\u3064\u304F\u3063\u305F\u306D\uFF5E"
+  itemDetail: turu

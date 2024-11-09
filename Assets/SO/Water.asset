@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Water
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u5929\u7136\u6C34"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: water
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: 2108815824, guid: deb62ad2ff18b324d91dcc75ec19d43f, type: 3}
-  itemDetail: "\u672C\u5F53\u306E\u30B4\u30DF\u3002\u6368\u3066\u306A\u3044\u7406\u7531\u304C\u306A\u3044"
+  itemDetail: water

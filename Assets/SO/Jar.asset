@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Jar
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u708A\u98EF\u5668"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: jar
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: 1008741904, guid: c753f22d3dc76e347b7ece2d4f41360e, type: 3}
-  itemDetail: "\u7559\u5B66\u751F\u304B\u3089\u9234\u6728\u541B\u304C\u3082\u3089\u3063\u305F\u708A\u98EF\u5668"
+  itemDetail: jar

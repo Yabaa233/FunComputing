@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: PaperCup
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u7D19\u30B3\u30C3\u30D7"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: papercup
+  m_EditorClassIdentifier: 
   itemSprite: {fileID: -238414789, guid: 75b7028c654f89a439f60eb6e2ef1185, type: 3}
-  itemDetail: "\u672C\u5F53\u306E\u30B4\u30DF\u3002\u307E\u3058\u3067\u65E9\u304F\u6368\u3066\u3088\u3046"
+  itemDetail: papercup

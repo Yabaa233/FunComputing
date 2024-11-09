@@ -8,8 +8,8 @@ public class CollectionManager : MonoBehaviour
 {
     public static CollectionManager instance;
 
-    public int MaxColCount;
-    public int CurColCount;
+    private int MaxColCount;
+    private int CurColCount;
 
     public TMP_Text CollectionText;
     public TMP_Text DetailText;
@@ -30,6 +30,7 @@ public class CollectionManager : MonoBehaviour
     void Start()
     {
         collectedItemList = new List<CollectionItemData>();
+        MaxColCount = CountCollectionItemsInScene();
     }
 
     public void AddItem(CollectionItemData itemData)
@@ -49,6 +50,8 @@ public class CollectionManager : MonoBehaviour
 
         // 清空 DetailText 的内容
         DetailText.text = string.Empty;
+
+        CollectionText.text = collectedItemList.Count.ToString()+"/" + MaxColCount.ToString();
 
         if (collectedItemList.Count > 0)
         {
@@ -84,4 +87,23 @@ public class CollectionManager : MonoBehaviour
         DetailText.text = detail;
     }
 
+    public int CountCollectionItemsInScene()
+    {
+        int count = 0;
+
+        // 获取所有包含 CollectionItem 的实例，无论是否 active
+        CollectionItem[] allCollectionItems = Resources.FindObjectsOfTypeAll<CollectionItem>();
+
+        // 遍历每个 CollectionItem 实例
+        foreach (CollectionItem item in allCollectionItems)
+        {
+            // 检查 ifInScene 是否为 true
+            if (item.ifInScene)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }

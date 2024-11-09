@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: CollectItem_1
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: crow
-  itemSprite: {fileID: -400745262, guid: 99af4ff4c9180d041beb8c79f29a74fb, type: 3}
-  itemDetail: aaaa
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: oculus
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: -324372598, guid: a4360f8036a5a1441aeb00f78160bad9, type: 3}
+  itemDetail: oculus

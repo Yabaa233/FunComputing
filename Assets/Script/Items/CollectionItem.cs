@@ -2,17 +2,6 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[CreateAssetMenu(menuName = "SOs/CollectionItemData")]
-public class CollectionItemData : ScriptableObject
-{
-    [SerializeField]
-    public string itemName = string.Empty;
-    [SerializeField]
-    public Sprite itemSprite ;  
-    [SerializeField]
-    public string itemDetail = string.Empty;
-    
-}
 public class CollectionItem : MonoBehaviour
 {
     public CollectionItemData itemData;

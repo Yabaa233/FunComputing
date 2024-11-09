@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Chair
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionItemData
-  itemName: "\u6905\u5B50"
-  itemSprite: {fileID: -1432645027, guid: bfaef49df6b58364391801c3e4898cb8, type: 3}
-  itemDetail: "\u6570\u6E1B\u3063\u305F...\uFF1F"
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: umbrella
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 1399969505, guid: 3d6355a931780114db2833b100e9d346, type: 3}
+  itemDetail: umbrella
