@@ -11,13 +11,25 @@ public class CollectionManager : MonoBehaviour
     private int MaxColCount;
     private int CurColCount;
 
-    public TMP_Text CollectionText;
-    public TMP_Text DetailText;
+    public TMP_Text CountCollectionText;
 
-    public List<CollectionItemData> collectedItemList;
+    public Text Detail_DetailText;
+    public Text Detail_NameText;
+    public Image Detail_Image;
+
+
+
+    public List<CollectionItemData> collectedItemDataList;
+    public List<CollectionItemData> collectedStickDataList;
+
 
     public GameObject UIParent;
     public GameObject itemPrefab;
+
+    public GameObject StickUIParent;
+    public GameObject StickItemPrefab;
+
+    private int curStickShow;
 
     private void Awake()
     {
@@ -25,11 +37,13 @@ public class CollectionManager : MonoBehaviour
         {
             instance = this;
         }
+        curStickShow = 0;
     }
     // Start is called before the first frame update
     void Start()
     {
-        collectedItemList = new List<CollectionItemData>();
+        collectedItemDataList = new List<CollectionItemData>();
+        collectedStickDataList = new List<CollectionItemData>();
         MaxColCount = CountCollectionItemsInScene();
     }
 
@@ -37,10 +51,17 @@ public class CollectionManager : MonoBehaviour
     {
         //CollectionItem item = new CollectionItem();
         //item.itemData = itemData;
-        collectedItemList.Add(itemData);
+        collectedItemDataList.Add(itemData);
     }
 
-    public void RefreshItemUI()
+    public void AddStick(CollectionItemData itemData)
+    {
+        //CollectionItem item = new CollectionItem();
+        //item.itemData = itemData;
+        collectedStickDataList.Add(itemData);
+    }
+
+    public void RefreshCollectionItemUI()
     {
         // 清空 UIParent 下的所有子物体
         foreach (Transform child in UIParent.transform)
@@ -48,14 +69,11 @@ public class CollectionManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // 清空 DetailText 的内容
-        DetailText.text = string.Empty;
+        CountCollectionText.text = collectedItemDataList.Count.ToString()+"/" + MaxColCount.ToString();
 
-        CollectionText.text = collectedItemList.Count.ToString()+"/" + MaxColCount.ToString();
-
-        if (collectedItemList.Count > 0)
+        if (collectedItemDataList.Count > 0)
         {
-            foreach (CollectionItemData item in collectedItemList)
+            foreach (CollectionItemData itemData in collectedItemDataList)
             {
                 // 实例化预制体
                 GameObject newUIElement = Instantiate(itemPrefab);
@@ -64,27 +82,113 @@ public class CollectionManager : MonoBehaviour
                 newUIElement.transform.SetParent(UIParent.transform, false);
 
                 // 获取并设置 CollectionItem 组件的数据
-                var preItem = newUIElement.GetComponent<CollectionItem>();
-                if (preItem != null)
+                var newItem = newUIElement.GetComponent<CollectionItem>();
+                if (newItem != null)
                 {
-                    preItem.itemData = item;
+                    newItem.itemData = itemData;
+                    newItem.NameText.text = itemData.itemName;
+                    newItem.Image.sprite = itemData.itemSprite;
                 }
 
-                // 获取并设置 Image 组件的图片
-                var preImage = newUIElement.GetComponent<Image>();
-                if (preImage != null)
+
+            }
+        }
+    }
+
+    public void ShowFirstStickItemUI()
+    {
+        // 清空 UIParent 下的所有子物体
+        foreach (Transform child in StickUIParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (collectedStickDataList.Count > 0)
+        {
+            var itemData= collectedStickDataList[0];
+            curStickShow = 0;
+                // 实例化预制体
+                GameObject newUIElement = Instantiate(StickItemPrefab);
+
+                // 设置生成物体的父对象为指定的 UI 父对象
+                newUIElement.transform.SetParent(StickUIParent.transform, false);
+
+                // 获取并设置 CollectionItem 组件的数据
+                var newItem = newUIElement.GetComponent<StickItem>();
+                if (newItem != null)
                 {
-                    preImage.sprite = item.itemSprite;
-                }
+                    newItem.itemData = itemData;
+                    newItem.NameText.text = itemData.itemName;
+                    newItem.DetailText.text = itemData.itemDetail;
+                    newItem.Image.sprite = itemData.itemSprite;
+                }          
+        }
+    }
+    public void ShowNextStickItemUI()
+    {
+        // 清空 StickUIParent 下的所有子物体
+        foreach (Transform child in StickUIParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // 确保当前索引在范围内
+        if (curStickShow < collectedStickDataList.Count - 1)
+        {
+            curStickShow++;
+            var itemData = collectedStickDataList[curStickShow];
+
+            // 实例化预制体
+            GameObject newUIElement = Instantiate(StickItemPrefab);
+            newUIElement.transform.SetParent(StickUIParent.transform, false);
+
+            var newItem = newUIElement.GetComponent<StickItem>();
+            if (newItem != null)
+            {
+                newItem.itemData = itemData;
+                newItem.NameText.text = itemData.itemName;
+                newItem.DetailText.text = itemData.itemDetail;
+                newItem.Image.sprite = itemData.itemSprite;
+            }
+        }
+    }
+
+    public void ShowPreStickItemUI()
+    {
+        // 清空 StickUIParent 下的所有子物体
+        foreach (Transform child in StickUIParent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // 确保当前索引在范围内
+        if (curStickShow > 0)
+        {
+            curStickShow--;
+            var itemData = collectedStickDataList[curStickShow];
+
+            // 实例化预制体
+            GameObject newUIElement = Instantiate(StickItemPrefab);
+            newUIElement.transform.SetParent(StickUIParent.transform, false);
+
+            var newItem = newUIElement.GetComponent<StickItem>();
+            if (newItem != null)
+            {
+                newItem.itemData = itemData;
+                newItem.NameText.text = itemData.itemName;
+                newItem.DetailText.text = itemData.itemDetail;
+                newItem.Image.sprite = itemData.itemSprite;
             }
         }
     }
 
 
-
-    public void RefreshDetailUI(string detail)
+    public void RefreshDetailUI(CollectionItem detail)
     {
-        DetailText.text = detail;
+        Detail_DetailText.text = detail.itemData.itemDetail;
+        Detail_NameText.text = detail.itemData.itemName;
+        Detail_Image.sprite = detail.itemData.itemSprite;
+
     }
 
     public int CountCollectionItemsInScene()

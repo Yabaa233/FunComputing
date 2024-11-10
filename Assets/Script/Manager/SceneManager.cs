@@ -32,6 +32,8 @@ public class SceneManager : MonoBehaviour
             scenes[i].SetActive(i == index);  // 仅激活当前索引对应的场景
         }
 
+        GamePlayManager.instance.ChangeScene();
+
         //currentSceneIndex = index;  // 更新当前场景索引
     }
 

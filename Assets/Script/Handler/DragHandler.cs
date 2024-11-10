@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class DragHandler : MonoBehaviour, IDragHandler, IPointerUpHandler
 {
     private Vector2 offset;
 
@@ -9,7 +9,7 @@ public class DragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     public float minX = -100f; // 左侧最大位置
     public float maxX = 100f;  // 右侧最大位置
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
         RectTransform rectTransform = GetComponent<RectTransform>();
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData.position, eventData.pressEventCamera, out offset);
@@ -39,7 +39,7 @@ public class DragHandler : MonoBehaviour, IPointerDownHandler, IDragHandler, IPo
     }
 
     // 暴露的方法，用于 EventTrigger 绑定
-    public void StartDrag(BaseEventData data) => OnPointerDown((PointerEventData)data);
+    public void StartDrag(BaseEventData data) => OnPointerClick((PointerEventData)data);
     public void Dragging(BaseEventData data) => OnDrag((PointerEventData)data);
     public void EndDrag(BaseEventData data) => OnPointerUp((PointerEventData)data);
 }

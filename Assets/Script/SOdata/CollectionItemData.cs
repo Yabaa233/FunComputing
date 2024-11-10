@@ -5,9 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SOs/CollectionItemData")]
 public class CollectionItemData : ScriptableObject
 {
-    // [SerializeField]
-    // public string itemName = string.Empty;
-
+    [SerializeField]
+    public string itemName = string.Empty;
     [SerializeField]
     public Sprite itemSprite;
     [SerializeField]

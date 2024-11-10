@@ -23,8 +23,49 @@ public class DestrotyItem : MonoBehaviour
 
     private void AddEventTrigger(EventTrigger trigger, System.Action action, EventTriggerType eventType)
     {
-        EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
-        entry.callback.AddListener((eventData) => action()); // 添加回调
-        trigger.triggers.Add(entry);
+        // 查找是否已存在相同类型的事件
+        EventTrigger.Entry existingEntry = trigger.triggers.Find(entry => entry.eventID == eventType);
+
+        if (existingEntry != null)
+        {
+            // 如果存在，直接在现有事件的回调中添加新事件
+            existingEntry.callback.AddListener((eventData) => action());
+        }
+        else
+        {
+            // 如果不存在，创建一个新的事件条目
+            EventTrigger.Entry newEntry = new EventTrigger.Entry { eventID = eventType };
+            newEntry.callback.AddListener((eventData) => action());
+            trigger.triggers.Add(newEntry);
+        }
     }
+
+    private void AddEventTrigger(EventTrigger trigger, System.Action[] actions, EventTriggerType eventType)
+    {
+        // 查找是否已存在相同类型的事件
+        EventTrigger.Entry existingEntry = trigger.triggers.Find(entry => entry.eventID == eventType);
+
+        if (existingEntry != null)
+        {
+            // 如果事件类型已存在，直接将每个动作添加到现有的回调
+            foreach (var action in actions)
+            {
+                existingEntry.callback.AddListener((eventData) => action());
+            }
+        }
+        else
+        {
+            // 如果事件类型不存在，创建一个新的事件条目
+            EventTrigger.Entry newEntry = new EventTrigger.Entry { eventID = eventType };
+            newEntry.callback.AddListener((eventData) =>
+            {
+                foreach (var action in actions)
+                {
+                    action();
+                }
+            });
+            trigger.triggers.Add(newEntry);
+        }
+    }
+
 }

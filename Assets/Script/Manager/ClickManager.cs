@@ -41,26 +41,46 @@ public class ClickManager : MonoBehaviour
     // 收集被点击的物体
     public void CollectItem(CollectionItem item)
     {
+        if(item.ifCollect == true) return;
         // Debug.Log("Item collected: " + item.itemData.itemName);
         // 使用 ScriptableObject.CreateInstance 来创建一个新的 CollectionItemData 实例
         CollectionItemData cloneItemData = ScriptableObject.CreateInstance<CollectionItemData>();
 
         // 复制属性
+        cloneItemData.itemName = item.itemData.itemName;
         cloneItemData.itemSprite = item.itemData.itemSprite;
         cloneItemData.itemDetail = item.itemData.itemDetail;
 
         CollectionManager.instance.AddItem(cloneItemData);
+
+        item.ifCollect = true;
+        //Destroy(item.gameObject);
+    }
+
+    public void GetStick(StickItem item)
+    {
+        // Debug.Log("Item collected: " + item.itemData.itemName);
+        // 使用 ScriptableObject.CreateInstance 来创建一个新的 CollectionItemData 实例
+        CollectionItemData cloneItemData = ScriptableObject.CreateInstance<CollectionItemData>();
+
+        // 复制属性
+        cloneItemData.itemName = item.itemData.itemName;
+        cloneItemData.itemSprite = item.itemData.itemSprite;
+        cloneItemData.itemDetail = item.itemData.itemDetail;
+
+        CollectionManager.instance.AddStick(cloneItemData);
         Destroy(item.gameObject);
     }
 
     // 调用 GameOver
     public void TriggerGameOver()
     {
-        GameManager.instance.GameOver();
+        UIManager.instance.GameOver();
     }
 
     public void ShowItemMessage(CollectionItem item)
     {
-        CollectionManager.instance.RefreshDetailUI(item.itemData.itemDetail);
+        UIManager.instance.CollectionDetailPanel.SetActive(true);
+        CollectionManager.instance.RefreshDetailUI(item);
     }
 }

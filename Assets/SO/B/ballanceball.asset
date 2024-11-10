@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017555f2818771c4f8479cfd9d496203, type: 3}
+  m_Name: ballanceball
+  m_EditorClassIdentifier: 
+  itemName: "\u30D0\u30E9\u30F3\u30B9\u30DC\u30FC\u30EB"
+  itemSprite: {fileID: 21300000, guid: 50395e64f8b71bf49a13a7135fffc456, type: 3}
+  itemDetail: "\u5BAE\u7530\u7814\u540D\u7269\u30A8\u30A2\u30D6\u30ED\u30EF"
