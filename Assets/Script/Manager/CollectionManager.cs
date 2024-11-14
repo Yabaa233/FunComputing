@@ -69,7 +69,7 @@ public class CollectionManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        CountCollectionText.text = collectedItemDataList.Count.ToString()+"/" + MaxColCount.ToString();
+        CountCollectionText.text = collectedItemDataList.Count.ToString();
 
         if (collectedItemDataList.Count > 0)
         {
