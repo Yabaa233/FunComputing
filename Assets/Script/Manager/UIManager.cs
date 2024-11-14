@@ -111,6 +111,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SetState(UIState.InGame);
+        SoundManager.instance.GameStart();
     }
 
     public void ShowCollection()
@@ -133,16 +134,22 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         SetState(UIState.Over);
+        SoundManager.instance.GameOver();
+
     }
 
     public void Retry()
     {
         SetState(UIState.InGame);
+        SoundManager.instance.GameStart();
+
     }
 
     public void EndGame()
     {
         SetState(UIState.Start);
+        SoundManager.instance.GameStart();
+
     }
 
     public void ColseInUI(GameObject uiOb)

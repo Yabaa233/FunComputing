@@ -40,7 +40,11 @@ public class DragItem : MonoBehaviour
     {
         // Reset to the initial local position
         IfInDrag = false; // Exit dragging state
-        gameObject.GetComponent<RectTransform>().anchoredPosition3D = initPos;
+        RectTransform rect = new RectTransform();
+        if (gameObject.TryGetComponent<RectTransform>(out rect))
+        {
+            rect.anchoredPosition3D = initPos;
+        }
 
 
         if (dragCanvas != null)
@@ -56,7 +60,8 @@ public class DragItem : MonoBehaviour
             if ((GamePlayManager.instance.curDragItem.
                 gameObject.GetComponent<CollectionItem>().itemData.itemName !=
                 gameObject.GetComponent<CollectionItem>().itemData.itemName)
-                && GamePlayManager.instance.curDragItem.isActiveAndEnabled)
+                && GamePlayManager.instance.curDragItem.isActiveAndEnabled
+                && GamePlayManager.instance.curDragItem!= GamePlayManager.instance.EmptyDragItem)
                 return;
         }
         // If left-clicked, enter dragging state

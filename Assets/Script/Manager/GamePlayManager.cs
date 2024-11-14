@@ -10,7 +10,7 @@ public class GamePlayManager : MonoBehaviour
     public DragItem curDragItem;
     public BinItem curBinItem;
 
-
+    public DragItem EmptyDragItem;
     private void Awake()
     {
         if (instance == null)
@@ -39,6 +39,11 @@ public class GamePlayManager : MonoBehaviour
             Debug.Log("No DragItem!!!");
             return;
         }
+        if (curDragItem.IfInDrag != true)
+        {
+            Debug.Log("No DragItem!!!"); 
+            return;
+        }
         if (curBinItem is null)
         {
             ClickManager.instance.TriggerGameOver();
@@ -56,6 +61,7 @@ public class GamePlayManager : MonoBehaviour
 
         //TODO直接设置为null有问题
         curDragItem.IfInDrag = false;
+        curDragItem = EmptyDragItem;
     }
 
     public void GetBin(BinItem item)
@@ -72,6 +78,8 @@ public class GamePlayManager : MonoBehaviour
     {
         curBinItem.garbageItems.Add(curDragItem);
         curDragItem.gameObject.SetActive(false);
+        curDragItem = EmptyDragItem;
+        SoundManager.instance.RightAction();
     }
 
     public void ChangeScene()
@@ -80,6 +88,8 @@ public class GamePlayManager : MonoBehaviour
         { 
             curDragItem.IfInDrag = false;
             curDragItem.ResetPos();
-    }
+
+            curDragItem = EmptyDragItem;
+        }
 }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -53,6 +54,11 @@ public class ClickManager : MonoBehaviour
 
         CollectionManager.instance.AddItem(cloneItemData);
 
+        GameOverItem overItem = null;
+        if(!item.gameObject.TryGetComponent<GameOverItem>(out overItem)){
+            SoundManager.instance.RightAction();
+        }
+
         item.ifCollect = true;
         //Destroy(item.gameObject);
     }
@@ -69,6 +75,7 @@ public class ClickManager : MonoBehaviour
         cloneItemData.itemDetail = item.itemData.itemDetail;
 
         CollectionManager.instance.AddStick(cloneItemData);
+        SoundManager.instance.GetSticker();
         Destroy(item.gameObject);
     }
 
@@ -82,5 +89,10 @@ public class ClickManager : MonoBehaviour
     {
         UIManager.instance.CollectionDetailPanel.SetActive(true);
         CollectionManager.instance.RefreshDetailUI(item);
+    }
+
+    public void OpenExternalLink()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=XpBL_barOLo");
     }
 }

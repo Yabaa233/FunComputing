@@ -11,7 +11,9 @@ public class CollectionManager : MonoBehaviour
     private int MaxColCount;
     private int CurColCount;
 
-    public TMP_Text CountCollectionText;
+    public Text CountCollectionText;
+    public Text CountStickerText;
+
 
     public Text Detail_DetailText;
     public Text Detail_NameText;
@@ -69,7 +71,7 @@ public class CollectionManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        CountCollectionText.text = collectedItemDataList.Count.ToString();
+        CountCollectionText.text = collectedItemDataList.Count.ToString() + "/44";
 
         if (collectedItemDataList.Count > 0)
         {
@@ -121,7 +123,10 @@ public class CollectionManager : MonoBehaviour
                     newItem.NameText.text = itemData.itemName;
                     newItem.DetailText.text = itemData.itemDetail;
                     newItem.Image.sprite = itemData.itemSprite;
-                }          
+                }
+
+            CountStickerText.text = collectedStickDataList.Count.ToString() + "/18";
+
         }
     }
     public void ShowNextStickItemUI()
