@@ -135,7 +135,6 @@ public class UIManager : MonoBehaviour
     {
         SetState(UIState.Over);
         SoundManager.instance.GameOver();
-
     }
 
     public void Retry()
@@ -149,11 +148,11 @@ public class UIManager : MonoBehaviour
     {
         SetState(UIState.Start);
         SoundManager.instance.GameStart();
-
     }
 
-    public void ColseInUI(GameObject uiOb)
+    public void ColseInUIandBackGame(GameObject uiOb)
     {
         uiOb.SetActive(false);
+        StartGame();
     }
 }

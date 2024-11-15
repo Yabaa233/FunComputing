@@ -55,7 +55,10 @@ public class ClickManager : MonoBehaviour
         CollectionManager.instance.AddItem(cloneItemData);
 
         GameOverItem overItem = null;
-        if(!item.gameObject.TryGetComponent<GameOverItem>(out overItem)){
+        DragItem dragItem = null;
+
+        if (!item.gameObject.TryGetComponent<GameOverItem>(out overItem)
+            &&(!item.gameObject.TryGetComponent<DragItem>(out dragItem))){
             SoundManager.instance.RightAction();
         }
 

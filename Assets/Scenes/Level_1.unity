@@ -12570,6 +12570,7 @@ MonoBehaviour:
   Over: {fileID: 8300000, guid: 3552d46f4f7ec7942885d98fbc704694, type: 3}
   Sticker: {fileID: 8300000, guid: 33607eb662492aa44a8b33254727f044, type: 3}
   Right: {fileID: 8300000, guid: 1727348e85c1f1443af158241ab15c02, type: 3}
+  Drag: {fileID: 8300000, guid: 55dc7648d64bae5469b43bdb415ee9aa, type: 3}
   BGMSource: {fileID: 1196616266}
   OtherSource: {fileID: 718472917}
 --- !u!1 &1729678722
@@ -13988,7 +13989,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1414011066}
           m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: ColseInUI
+          m_MethodName: ColseInUIandBackGame
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 1934736987}
@@ -14533,7 +14534,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1414011066}
           m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-          m_MethodName: ColseInUI
+          m_MethodName: ColseInUIandBackGame
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 2068713678}

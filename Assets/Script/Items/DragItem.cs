@@ -79,6 +79,8 @@ public class DragItem : MonoBehaviour
             }
             originalSortingOrder = dragCanvas.sortingOrder;
             dragCanvas.sortingOrder = 100; // Set a high sorting order to bring it to the top
+
+            SoundManager.instance.GetDrag();
         }
     }
 

@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip Over;
     public AudioClip Sticker;
     public AudioClip Right;
+    public AudioClip Drag;
 
     public AudioSource BGMSource;
     public AudioSource OtherSource;
@@ -22,6 +23,8 @@ public class SoundManager : MonoBehaviour
         {
             instance = this;
         }
+
+        PlayBGM();
     }
     public void GameStart()
     {
@@ -53,6 +56,12 @@ public class SoundManager : MonoBehaviour
     public void GetSticker()
     {
         OtherSource.clip = Sticker;
+        OtherSource.Play();
+    }
+
+    public void GetDrag()
+    {
+        OtherSource.clip = Drag;
         OtherSource.Play();
     }
 }
